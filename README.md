@@ -4,6 +4,10 @@
 ## Introduction
 自己的业务主要是为了汇总共享文档里的日报，在此需求上实现了几个接口，如有需求者可以自取。
 
+生成的日报demo：
+
+<img width="250" height="350" src="https://github.com/HeapsortYi/FeishuAutoTools/blob/master/demo.png"/>
+
 ### project tree:
 ```
 FeishuAutoTools
@@ -37,7 +41,7 @@ FeishuAutoTools
 ### 2. 进行身份验证
 1. 身份验证开发指南：[参考文档](https://open.feishu.cn/document/ukTMukTMukTM/uETOwYjLxkDM24SM5AjN)
 2. 第一次使用时，需要构造`https://open.feishu.cn/open-apis/authen/v1/index?redirect_uri={REDIRECT_URI}&app_id={APPID}`格式的链接，在浏览器发送请求，然后完成扫码登录。登录成功后会生成登录预授权码 code，并作为参数重定向到重定向URL。
-用返回的code修改`./feishu/authen_api.py`里**authen\_code\_**的值，然后运行`authen_api.py`，将返回结果中的**access_token**和**refresh_token**复制出来粘贴到`./feishu/token.txt`
+用返回的code修改`./feishu/authen_api.py`里`authen_code_`的值，然后运行`authen_api.py`，将返回结果中的**access_token**和**refresh_token**复制出来粘贴到`./feishu/token.txt`
 3. 由于access_token不到两小时就会过期，可以配置一个定时任务保持刷新 --> 代码见`./biz/refresh_token.py`
 
 ### 3. 调用相关API
