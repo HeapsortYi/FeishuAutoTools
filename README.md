@@ -6,7 +6,7 @@
 
 生成的日报demo：
 
-<img width="250" height="350" src="https://github.com/HeapsortYi/FeishuAutoTools/blob/master/demo.png"/>
+<img width="250" height="350" src="/demo.png"/>
 
 ### project tree:
 ```
